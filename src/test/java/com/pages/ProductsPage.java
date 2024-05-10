@@ -39,6 +39,23 @@ public class ProductsPage {
         }
     }
 
+    public void verifyTextNotVisible(String textOnPage) {
+        List<WebElement> list =null;
+        try {
+          list = webdriverFactory.getWebDriver().findElements(By.xpath("//span[text()='" + textOnPage + "']"));
+        }catch(Exception ex)
+        {
+            list = webdriverFactory.getWebDriver().findElements(By.xpath("//div[text()='" + textOnPage + "']"));
+        }
+        System.out.println("list.size() = "+list.size());
+        if (list.size()<=0) {
+            Assert.assertEquals("Element was not present on Page", true, true);
+
+        } else {
+            Assert.assertEquals("Element is present on Page", true, false);
+        }
+    }
+
     public void addProducts(List<List<String>> productsList) {
         Actions action=new Actions(webdriverFactory.getWebDriver());
 

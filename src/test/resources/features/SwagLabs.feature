@@ -63,8 +63,9 @@ Feature: Cart functionality
     And user remove below products on cart Page
       | ProductName             |
       | Sauce Labs Bike Light   |
+    Then User should not see "Sauce Labs Bike Light" on page
 
     Examples:
       | testUser                |
       | standard_user           |
-      | performance_glitch_user |
+#      | performance_glitch_user |

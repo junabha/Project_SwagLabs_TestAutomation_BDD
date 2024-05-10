@@ -56,6 +56,11 @@ public class ReusableStep {
         productPage.verifyTextVisible(textOnPage);
     }
 
+    @When("User should not see {string} on page")
+    public void verifyTextNotPrsent(String textOnPage) {
+        productPage.verifyTextNotVisible(textOnPage);
+    }
+
     @When("user add below products on Product Page")
     public void addProducts(DataTable dataTable) throws Throwable{
         List<List<String>> rows = dataTable.asLists(String.class);
