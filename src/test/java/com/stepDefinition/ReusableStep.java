@@ -13,7 +13,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class LoginPageStep {
+public class ReusableStep {
     public LoginPage loginPage;
     public ProductsPage productPage;
     public CheckoutPage checkoutPage;
@@ -28,7 +28,7 @@ public class LoginPageStep {
     @FindBy(xpath = "//div[@class='summary_total_label']")
     public WebElement totalSumLabel;
 
-    public LoginPageStep(WebDriverFactory webdriverFactory) throws Exception {
+    public ReusableStep(WebDriverFactory webdriverFactory) throws Exception {
         this.webdriverFactory=webdriverFactory;
         this.loginPage = new LoginPage(webdriverFactory);
         this.productPage = new ProductsPage(webdriverFactory);
