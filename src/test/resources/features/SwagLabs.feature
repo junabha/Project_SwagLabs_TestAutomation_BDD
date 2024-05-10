@@ -68,4 +68,4 @@ Feature: Cart functionality
     Examples:
       | testUser                |
       | standard_user           |
-#      | performance_glitch_user |
+      | performance_glitch_user |
